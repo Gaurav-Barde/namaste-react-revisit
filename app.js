@@ -1,14 +1,22 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 
-const parent = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", { id: "title", key: "1" }, "I am an H1 tag"),
-    React.createElement("h2", { id: "subTitle", key: "2" }, "I am an H2 tag"),
-  ])
+const Heading = () => (
+  <div>
+    <h1 className="heading">Hello from React Component!</h1>
+    <h2>Hi there</h2>
+  </div>
 );
 
-const root = createRoot(document.getElementById("root"));
-root.render(parent);
+const ReactElement = (
+  <div>
+    <Heading />
+    <h1>React Element</h1>
+  </div>
+);
+
+const rootElement = document.getElementById("root");
+
+const root = createRoot(rootElement);
+
+root.render(ReactElement);
