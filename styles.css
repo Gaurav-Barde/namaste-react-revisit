@@ -1,18 +1,19 @@
 body {
   margin: 0;
+  background: #eee;
+  font-family: sans-serif;
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgb(61, 219, 61);
-  border-radius: 25px;
+  background: white;
   padding: 6px 0;
 }
 
 .logo {
-  width: 100px;
+  width: 70px;
 }
 
 .nav-container {
@@ -50,10 +51,10 @@ body {
 
 .res-card {
   width: 300px;
-  height: 350px;
   margin: 0 4px 10px;
   border: 2px solid transparent;
   cursor: pointer;
+  border-radius: 8px;
 }
 
 .res-card:hover {
