@@ -1,6 +1,5 @@
 export const resData = [
   {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
       id: "133768",
       name: "Salt Water Resto Cafe",
@@ -79,18 +78,8 @@ export const resData = [
       },
       ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
     },
-    analytics: {
-      context: "seo-data-15f99878-bdde-4c23-b154-ab7bfd2d3dcf",
-    },
-    cta: {
-      link: "https://www.swiggy.com/city/belgaum/salt-water-resto-cafe-road-hanuman-nagar-rest133768",
-      text: "RESTAURANT_MENU",
-      type: "WEBLINK",
-    },
-    widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
   {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
       id: "123672",
       name: "Niyaaz Nehru Nagar",
@@ -168,7 +157,6 @@ export const resData = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
   {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
       id: "102262",
       name: "Grand China",
@@ -177,9 +165,9 @@ export const resData = [
       areaName: "Bauxite Road",
       costForTwo: "₹300 for two",
       cuisines: ["Chinese", "Fast Food", "Kebabs", "Beverages"],
-      avgRating: 4.3,
+      avgRating: 3.3,
       parentId: "89728",
-      avgRatingString: "4.3",
+      avgRatingString: "3.3",
       totalRatingsString: "6.2K+",
       sla: {
         deliveryTime: 24,
@@ -242,7 +230,6 @@ export const resData = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
   {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
       id: "101876",
       name: "Shree Panjurli Lunch home",
@@ -323,7 +310,6 @@ export const resData = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
   {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
       id: "450266",
       name: "The Good Bowl",
@@ -407,7 +393,6 @@ export const resData = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
   {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
       id: "211572",
       name: "Baskin Robbins - Ice Cream Desserts",
@@ -485,7 +470,6 @@ export const resData = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
   {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
       id: "1003674",
       name: "Sharief Bhai Biryani",
@@ -571,7 +555,6 @@ export const resData = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
   {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
       id: "450267",
       name: "The Biryani Life",
