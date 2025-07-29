@@ -1,57 +1,5 @@
-import { createRoot } from "react-dom/client";
-
-/* 
--AppLayout
-  -Header
-    -Logo
-    -Nav Links
-      -Home
-      -About
-      -Contact
-      -Cart
-  -Body
-    -Search
-      -Input
-      -Button
-    -Restaurant Container
-      -ResCard
-        -Res Image
-        -Restaurant Name, Star Rating, Cuisine, Delivery Time
-  -Footer
-    -Copyright
-    -Links
-    -Address
-    -Contact
-*/
-
-/* 
-Config Driven UI Example
-
-const config = {
-  formConfig: [
-    { label: "Name", type: "text", name: "name" },
-    { label: "Mobile Number", type: "number", name: "mobile" },
-  ],
-};
-
-const Form = ({ formConfig }) => {
-  return formConfig.map((formdata, i) => {
-    return (
-      <div key={i}>
-        <label htmlFor={formdata.name}>{formdata.label}</label>
-        <input type={formdata.type} name={formdata.name} id={formdata.name} />
-      </div>
-    );
-  });
-};
-
-
-      <Form formConfig={config.formConfig} />
- */
-
-const resData = [
+export const resData = [
   {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
       id: "133768",
       name: "Salt Water Resto Cafe",
@@ -130,18 +78,8 @@ const resData = [
       },
       ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
     },
-    analytics: {
-      context: "seo-data-15f99878-bdde-4c23-b154-ab7bfd2d3dcf",
-    },
-    cta: {
-      link: "https://www.swiggy.com/city/belgaum/salt-water-resto-cafe-road-hanuman-nagar-rest133768",
-      text: "RESTAURANT_MENU",
-      type: "WEBLINK",
-    },
-    widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
   {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
       id: "123672",
       name: "Niyaaz Nehru Nagar",
@@ -219,7 +157,6 @@ const resData = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
   {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
       id: "102262",
       name: "Grand China",
@@ -228,9 +165,9 @@ const resData = [
       areaName: "Bauxite Road",
       costForTwo: "₹300 for two",
       cuisines: ["Chinese", "Fast Food", "Kebabs", "Beverages"],
-      avgRating: 4.3,
+      avgRating: 3.3,
       parentId: "89728",
-      avgRatingString: "4.3",
+      avgRatingString: "3.3",
       totalRatingsString: "6.2K+",
       sla: {
         deliveryTime: 24,
@@ -293,7 +230,6 @@ const resData = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
   {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
       id: "101876",
       name: "Shree Panjurli Lunch home",
@@ -374,7 +310,6 @@ const resData = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
   {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
       id: "450266",
       name: "The Good Bowl",
@@ -458,7 +393,6 @@ const resData = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
   {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
       id: "211572",
       name: "Baskin Robbins - Ice Cream Desserts",
@@ -536,7 +470,6 @@ const resData = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
   {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
       id: "1003674",
       name: "Sharief Bhai Biryani",
@@ -622,7 +555,6 @@ const resData = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
   {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     info: {
       id: "450267",
       name: "The Biryani Life",
@@ -704,86 +636,3 @@ const resData = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
 ];
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          alt="Logo"
-          className="logo"
-          src="https://1000logos.net/wp-content/uploads/2021/05/Swiggy-emblem.png"
-        />
-      </div>
-      <div className="nav-container">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const Search = () => {
-  return <div className="search-container">Search</div>;
-};
-
-const ResCard = (props) => {
-  const { resData } = props;
-  const { name, cloudinaryImageId, cuisines, avgRating, sla } = resData?.info;
-
-  return (
-    <div className="res-card">
-      <img
-        alt="res logo"
-        className="res-logo"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-      />
-      <div className="res-content">
-        <h3>{name}</h3>
-        <h4>{cuisines?.join(", ")}</h4>
-        <h4>{`❇️ ${avgRating} stars`}</h4>
-        <h4>{`${sla?.deliveryTime} minutes`}</h4>
-      </div>
-    </div>
-  );
-};
-
-const RestaurantCardContainer = () => {
-  return (
-    <div className="res-container">
-      {resData.map((restaurant) => (
-        <ResCard key={restaurant.info.id} resData={restaurant} />
-      ))}
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="body">
-      <Search />
-      <RestaurantCardContainer />
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app-layout">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
-
-root.render(<AppLayout />);
