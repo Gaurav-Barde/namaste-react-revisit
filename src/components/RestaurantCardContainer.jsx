@@ -1,13 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ResCard } from "./ResCard";
-import { resData } from "../utils/mockData";
+import { RES_LIST_API_URL } from "../utils/constants";
 
 const RestaurantCardContainer = () => {
-  const [resList, setResList] = useState(resData);
+  const [resList, setResList] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const filterButtonHandler = () => {
     const filteredData = resData.filter((res) => res.info.avgRating > 4);
     setResList(filteredData);
+  };
+
+  const fetchData = async () => {
+    const data = await fetch(RES_LIST_API_URL);
+    const json = await data.json();
+    setResList(
+      json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
   };
 
   return (
