@@ -1,7 +1,9 @@
 body {
   margin: 0;
-  background: #eee;
+  background: #efefef;
   font-family: sans-serif;
+  padding: 0 8px;
+  color: #333;
 }
 
 .header {
