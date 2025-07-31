@@ -1,6 +1,11 @@
+import { useState } from "react";
 import { APP_LOGO_URL } from "../utils/constants";
 
 const Header = () => {
+  const [isLoggedin, setIsLoggedin] = useState(false);
+
+  const clickHandler = () => setIsLoggedin(!isLoggedin);
+
   return (
     <div className="header">
       <div className="logo-container">
@@ -12,6 +17,11 @@ const Header = () => {
           <li>About</li>
           <li>Contact</li>
           <li>Cart</li>
+          <li>
+            <button className="button" onClick={() => clickHandler()}>
+              {isLoggedin ? "Logout" : "Login"}
+            </button>
+          </li>
         </ul>
       </div>
     </div>

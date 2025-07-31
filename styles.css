@@ -10,6 +10,7 @@ body {
   justify-content: space-between;
   background: white;
   padding: 6px 0;
+  color: #333;
 }
 
 .logo {
@@ -22,6 +23,7 @@ body {
 
 .nav-container > ul {
   display: flex;
+  align-items: center;
   list-style-type: none;
   padding: 0 20px;
   font-size: 18px;
@@ -35,13 +37,41 @@ body {
   margin-right: 0;
 }
 
+.login-button {
+  width: 80px;
+  border: none;
+  background: hotpink;
+  padding: 4px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 .body {
   padding: 8px 12px;
   margin-top: 10px;
 }
 
-.search-container {
-  margin-bottom: 20px;
+.button {
+  border: 1px solid lightgray;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: darkorange;
+}
+
+.res-container-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.search {
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  margin-right: 12px;
 }
 
 .res-container {
@@ -71,7 +101,8 @@ body {
   padding: 0 5px;
 }
 
-.res-content > h3, .res-content > h4 {
+.res-content > h3,
+.res-content > h4 {
   margin: 0 0 8px;
 }
 
@@ -81,4 +112,16 @@ body {
 
 .res-content > h4 {
   color: #444;
+}
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.shimmer-block {
+  width: 400px;
+  height: 250px;
+  background: lightslategray;
 }

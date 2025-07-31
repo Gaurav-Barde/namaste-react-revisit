@@ -9,10 +9,7 @@ export const ResCard = (props) => {
       <img
         alt="res logo"
         className="res-logo"
-        src={
-          RES_LOGO_CDN_URL +
-          cloudinaryImageId
-        }
+        src={RES_LOGO_CDN_URL + cloudinaryImageId}
       />
       <div className="res-content">
         <h3>{name}</h3>
