@@ -156,3 +156,12 @@ body {
   border: 1px dashed cadetblue;
   padding: 10px;
 }
+
+.user-card {
+  border: 2px solid slategrey;
+  padding: 10px;
+  width: 30%;
+  font-size: 18px;
+  color: dodgerblue;
+  margin-bottom: 40px;
+}

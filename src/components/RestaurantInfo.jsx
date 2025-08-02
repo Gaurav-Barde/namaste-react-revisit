@@ -34,12 +34,6 @@ const RestaurantInfo = () => {
   const { itemCards } =
     resInfo?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[10]?.card?.card;
 
-  // console.log(
-  //   "cards: ",
-  //   resInfo?.[4].groupedCard?.cardGroupMap.REGULAR?.cards[10].card.card
-  //     .itemCards
-  // );
-
   return (
     <div className="res-info-container">
       <h1>{name}</h1>
