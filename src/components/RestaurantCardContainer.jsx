@@ -3,6 +3,7 @@ import { ResCard } from "./ResCard";
 import Search from "./Search";
 import { RES_LIST_API_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router";
 
 const RestaurantCardContainer = () => {
   const [resList, setResList] = useState([]);
@@ -13,16 +14,20 @@ const RestaurantCardContainer = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(RES_LIST_API_URL);
-    const json = await data.json();
-    setResList(
-      json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants
-    );
-    setFilteredResList(
-      json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants
-    );
+    try {
+      const data = await fetch(RES_LIST_API_URL);
+      const json = await data.json();
+      setResList(
+        json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+      setFilteredResList(
+        json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+    } catch (e) {
+      alert(e.message);
+    }
   };
 
   const filterButtonHandler = () => {
@@ -51,7 +56,12 @@ const RestaurantCardContainer = () => {
       </div>
       <div className="res-container">
         {filteredResList.map((restaurant) => (
-          <ResCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <ResCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>

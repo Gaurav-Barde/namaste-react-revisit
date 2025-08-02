@@ -5,6 +5,7 @@ import Body from "./components/Body";
 import Contact from "./components/Contact";
 import About from "./components/About";
 import Error from "./components/Error";
+import RestaurantInfo from "./components/RestaurantInfo";
 
 // router configuration
 const appRouter = createBrowserRouter([
@@ -26,6 +27,11 @@ const appRouter = createBrowserRouter([
         // about page route
         path: "/about",
         element: <About />,
+      },
+      {
+        // restaurant info route
+        path: "/restaurants/:resId",
+        element: <RestaurantInfo />,
       },
     ],
     errorElement: <Error />,
