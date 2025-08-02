@@ -1,7 +1,5 @@
 const arr = [1, 1, 1, 1, 1, 1, , 1, 1, 1].fill("");
 
-console.log(arr);
-
 const Shimmer = () => {
   return (
     <div className="shimmer-container">
