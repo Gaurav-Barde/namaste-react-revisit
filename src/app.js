@@ -2,10 +2,13 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import AppLayout from "./components/AppLayout";
 import Body from "./components/Body";
-import Contact from "./components/Contact";
+// import { Contact } from "./components/Contact";
 import About from "./components/About";
 import Error from "./components/Error";
 import RestaurantInfo from "./components/RestaurantInfo";
+import { lazy, Suspense } from "react";
+
+const Review = lazy(() => import("./components/Contact"));
 
 // router configuration
 const appRouter = createBrowserRouter([
@@ -21,7 +24,11 @@ const appRouter = createBrowserRouter([
       {
         // contact page route
         path: "/contact",
-        element: <Contact />,
+        element: (
+          <Suspense fallback={<h1>Loading About...</h1>}>
+            <Review />
+          </Suspense>
+        ),
       },
       {
         // about page route
