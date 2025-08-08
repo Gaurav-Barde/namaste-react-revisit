@@ -8,7 +8,7 @@ const AppLayout = () => {
   return !onlineStatus ? (
     <h1>No Internet Connection Found</h1>
   ) : (
-    <div className="app-layout">
+    <div className="bg-white">
       <Header />
       <Outlet />
     </div>

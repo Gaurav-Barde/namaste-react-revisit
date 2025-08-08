@@ -2,7 +2,7 @@ import RestaurantCardContainer from "./RestaurantCardContainer";
 
 const Body = () => {
   return (
-    <div className="body">
+    <div className="p-4">
       <RestaurantCardContainer />
     </div>
   );

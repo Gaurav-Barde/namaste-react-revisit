@@ -14,9 +14,11 @@ class About extends Component {
   render() {
     console.log("Parent Render");
     return (
-      <div>
-        <h1>About Us</h1>
-        <h3>Revisiting Namaste React Web Series.</h3>
+      <div className="py-10 px-5">
+        <h1 className="text-2xl font-bold py-2">About Us</h1>
+        <h3 className="text-lg font-bold py-2">
+          Revisiting Namaste React Web Series.
+        </h3>
         <UserClass
           name={"First Child"}
           location={"Belgaum_Class"}
@@ -31,20 +33,5 @@ class About extends Component {
     );
   }
 }
-
-// const About = () => {
-//   return (
-//     <div>
-//       <h1>About Us</h1>
-//       <h3>Revisiting Namaste React Web Series.</h3>
-//       {/* <User name={"Gaurav"} location={"Belgaum"} contact={"Gaurav_Barde_10"} /> */}
-//       <UserClass
-//         name={"Gaurav_Class"}
-//         location={"Belgaum_Class"}
-//         contact={"Gaurav_Barde_10_Class"}
-//       />
-//     </div>
-//   );
-// };
 
 export default About;

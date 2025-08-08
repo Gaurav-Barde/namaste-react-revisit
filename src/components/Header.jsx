@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { APP_LOGO_URL } from "../utils/constants";
+import { APP_LOGO_URL, NAV_ITEMS } from "../utils/constants";
 import { Link } from "react-router";
 
 const Header = () => {
@@ -8,28 +8,24 @@ const Header = () => {
   const clickHandler = () => setIsLoggedIn(!isLoggedIn);
 
   return (
-    <div className="header">
+    <div className="flex justify-between items-center px-2 py-4 bg-white shadow-sm">
       <div className="logo-container">
-        <img alt="Logo" className="logo" src={APP_LOGO_URL} />
+        <Link path="/">
+          <img alt="Logo" className="w-20" src={APP_LOGO_URL} />
+        </Link>
       </div>
-      <div className="nav-container">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
+      <ul className="flex gap-16 text-md font-semibold text-gray-800">
+        {NAV_ITEMS.map((nav) => (
+          <li key={nav.navItem}>
+            <Link to={nav.path}>{nav.navItem}</Link>
           </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li>
-            <button className="button" onClick={() => clickHandler()}>
-              {isLoggedIn ? "Logout" : "Login"}
-            </button>
-          </li>
-        </ul>
-      </div>
+        ))}
+        <li>
+          <button className="button" onClick={() => clickHandler()}>
+            {isLoggedIn ? "Logout" : "Login"}
+          </button>
+        </li>
+      </ul>
     </div>
   );
 };

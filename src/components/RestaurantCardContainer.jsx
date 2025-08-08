@@ -47,14 +47,17 @@ const RestaurantCardContainer = () => {
   }
 
   return (
-    <div>
-      <div className="res-container-header">
+    <div className="">
+      <div className="flex mb-8">
         <Search searchFilteredResList={searchFilteredResList} />
-        <button className="button" onClick={filterButtonHandler}>
+        <button
+          className="mx-4 bg-orange-300 px-4 py-2 rounded-lg text-sm font-semibold text-slate-900 cursor-pointer"
+          onClick={filterButtonHandler}
+        >
           Top Rated Restaurants
         </button>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap gap-5">
         {filteredResList.map((restaurant) => (
           <Link
             key={restaurant.info.id}
