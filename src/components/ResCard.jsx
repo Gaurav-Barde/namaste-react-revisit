@@ -5,10 +5,10 @@ export const ResCard = (props) => {
   const { name, cloudinaryImageId, cuisines, avgRating, sla } = resData?.info;
 
   return (
-    <div className="res-card">
+    <div className="w-60 h-96">
       <img
         alt="res logo"
-        className="res-logo"
+        className="rounded-md"
         src={RES_LOGO_CDN_URL + cloudinaryImageId}
       />
       <div className="res-content">

@@ -1,3 +1,18 @@
+export const NAV_ITEMS = [
+  {
+    navItem: "Home",
+    path: "/",
+  },
+  {
+    navItem: "About",
+    path: "/about",
+  },
+  {
+    navItem: "Contact",
+    path: "/contact",
+  },
+];
+
 export const APP_LOGO_URL =
   "https://1000logos.net/wp-content/uploads/2021/05/Swiggy-emblem.png";
 

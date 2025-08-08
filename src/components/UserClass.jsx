@@ -30,15 +30,17 @@ class UserClass extends React.Component {
     const { count1 } = this.state;
 
     return (
-      <div className="user-card">
+      <div className="border border-dashed mb-2 p-4">
         <h4>Name: {this.props.name}</h4>
         <h4>Location: {this.props.location}</h4>
         <h4>Contact: {this.props.contact}</h4>
         <h5>{this.state.count1}</h5>
-        <button onClick={() => this.setState({ count1: count1 + 1 })}>
+        <button
+          className="bg-green-300 p-2 font-bold rounded-sm"
+          onClick={() => this.setState({ count1: count1 + 1 })}
+        >
           Increment Count1
         </button>
-        <h5>{this.state.count2}</h5>
         <UserChild name={this.props.name} />
       </div>
     );
