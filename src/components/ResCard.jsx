@@ -1,4 +1,4 @@
-import { RES_LOGO_CDN_URL } from "../utils/constants";
+import { IMAGE_CDN_URL } from "../utils/constants";
 
 export const ResCard = (props) => {
   const { resData } = props ?? {};
@@ -9,7 +9,7 @@ export const ResCard = (props) => {
       <img
         alt="res logo"
         className="rounded-md h-60 w-60"
-        src={RES_LOGO_CDN_URL + cloudinaryImageId}
+        src={IMAGE_CDN_URL + cloudinaryImageId}
       />
       <div className="p-2">
         <h3>{name}</h3>

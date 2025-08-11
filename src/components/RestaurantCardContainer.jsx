@@ -72,3 +72,12 @@ const RestaurantCardContainer = () => {
 };
 
 export default RestaurantCardContainer;
+
+/* 
+findout the data and do console.log
+
+use map and show the title
+
+
+
+*/
