@@ -1,41 +1,58 @@
+import { useState } from "react";
 import Shimmer from "./Shimmer";
 import StarRatingIcon from "../assets/StarRatingIcon";
 import useRestaurantInfo from "../utils/custom-hooks/useRestaurantInfo";
+import MenuCategory from "./MenuCategory";
 
 const RestaurantInfo = () => {
+  const [showMenuItemListIndex, setShowMenuItemListIndex] = useState(null);
+
   const resInfo = useRestaurantInfo();
 
   if (resInfo?.length === 0) {
     return <Shimmer />;
   }
 
-  const { name, avgRating, totalRatingsString, costForTwoMessage } =
+  const { name, avgRating, totalRatingsString, costForTwoMessage, cuisines } =
     resInfo?.[2]?.card?.card?.info || {};
 
-  const { itemCards } =
-    resInfo?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[10]?.card?.card;
+  const filteredCategoriesData =
+    resInfo?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
+      (category) =>
+        category.card.card["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+
+  const setShowHandler = (index) => {
+    setShowMenuItemListIndex(null);
+    if (showMenuItemListIndex !== index) {
+      setShowMenuItemListIndex(index);
+    }
+  };
 
   return (
-    <div className="flex flex-col items-center py-20">
-      <h1 className="text-2xl bg-orange-300 inline-block px-4 py-2 mb-2 rounded-md">
-        {name}
-      </h1>
-      <div className="flex justify-center mb-2">
-        <StarRatingIcon />
-        <h3>
-          {avgRating} ({totalRatingsString}) • {costForTwoMessage}
+    <div className="py-20 w-5/12 mx-auto">
+      <h1 className="text-3xl font-bold text-gray-900 mb-4">{name}</h1>
+      <div className="border border-gray-300 rounded-xl p-4 shadow-lg mb-8">
+        <div className="mb-2 flex items-center">
+          <StarRatingIcon />
+          <h3 className="ml-2 font-semibold">
+            {avgRating} ({totalRatingsString}) • {costForTwoMessage}
+          </h3>
+        </div>
+        <h3 className="text-sm font-bold text-orange-500 underline mb-4">
+          {cuisines.join(", ")}
         </h3>
+        <h3 className="text-sm font-bold text-gray-700 mb-4">30-35 mins</h3>
       </div>
-      <ul>
-        {itemCards?.map((item) => (
-          <li
-            key={item?.card?.info?.name}
-            className="mb-3 border border-dotted border-orange-400 p-2 font-semibold text-gray-900"
-          >
-            {item?.card?.info?.name} - Rs. {item?.card?.info?.price / 100}
-          </li>
-        ))}
-      </ul>
+      {filteredCategoriesData?.map((category, index) => (
+        <MenuCategory
+          key={category.card.card.categoryId}
+          data={category}
+          show={showMenuItemListIndex === index}
+          setShow={() => setShowHandler(index)}
+        />
+      ))}
     </div>
   );
 };

@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { ResCard } from "./ResCard";
 import Search from "./Search";
 import { RES_LIST_API_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
+import UserContext from "../utils/contexts/UserContext";
 
 const RestaurantCardContainer = () => {
   const [resList, setResList] = useState([]);
   const [filteredResList, setFilteredResList] = useState([]);
+
+  const { userName, setUserName } = useContext(UserContext);
 
   useEffect(() => {
     fetchData();
@@ -56,6 +59,11 @@ const RestaurantCardContainer = () => {
         >
           Top Rated Restaurants
         </button>
+        <input
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+          className="border p-2 rounded-lg"
+        />
       </div>
       <div className="flex flex-wrap gap-5">
         {filteredResList.map((restaurant) => (
