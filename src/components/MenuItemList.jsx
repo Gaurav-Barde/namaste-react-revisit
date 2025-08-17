@@ -1,7 +1,15 @@
 import StarRatingIcon from "../assets/StarRatingIcon";
 import { IMAGE_CDN_URL } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/redux/slices/cartSlice";
 
 const MenuItemList = ({ menuItemCards }) => {
+  const dispatch = useDispatch();
+
+  const addClickHandler = (item) => {
+    dispatch(addItem(item));
+  };
+
   return menuItemCards.map((menuItemCard) => {
     const {
       name,
@@ -13,6 +21,7 @@ const MenuItemList = ({ menuItemCards }) => {
       description,
       imageId,
     } = menuItemCard?.card?.info;
+
     return (
       <div key={id} className="border-b border-gray-200 mt-4 py-8">
         <div className="flex justify-between items-start">
@@ -32,7 +41,10 @@ const MenuItemList = ({ menuItemCards }) => {
           </div>
           <div className="w-2/12 relative">
             <img src={IMAGE_CDN_URL + imageId} className="rounded-xl" />
-            <button className="bg-white text-green-600 font-bold text-lg text-center absolute -bottom-2 left-1/2 transform -translate-x-1/2 px-6 shadow-lg rounded-lg cursor-pointer">
+            <button
+              onClick={() => addClickHandler(menuItemCard)}
+              className="bg-white text-green-600 font-bold text-lg text-center absolute -bottom-2 left-1/2 transform -translate-x-1/2 px-6 shadow-lg rounded-lg cursor-pointer"
+            >
               ADD
             </button>
           </div>

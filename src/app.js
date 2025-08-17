@@ -7,6 +7,7 @@ import About from "./components/About";
 import Error from "./components/Error";
 import RestaurantInfo from "./components/RestaurantInfo";
 import { lazy, Suspense } from "react";
+import Cart from "./components/Cart";
 
 const Review = lazy(() => import("./components/Contact"));
 
@@ -34,6 +35,11 @@ const appRouter = createBrowserRouter([
         // about page route
         path: "/about",
         element: <About />,
+      },
+      {
+        // cart page
+        path: "/cart",
+        element: <Cart />,
       },
       {
         // restaurant info route
