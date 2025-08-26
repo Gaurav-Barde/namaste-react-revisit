@@ -1,6 +1,8 @@
 import { IMAGE_CDN_URL } from "../utils/constants";
 
 export const ResCard = (props) => {
+  console.log(props.resData);
+
   const { resData } = props ?? {};
   const { name, cloudinaryImageId, cuisines, avgRating, sla } = resData?.info;
 
