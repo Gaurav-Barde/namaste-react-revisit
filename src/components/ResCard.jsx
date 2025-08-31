@@ -1,11 +1,16 @@
 import { IMAGE_CDN_URL } from "../utils/constants";
 
 export const ResCard = (props) => {
+  console.log(props.resData);
+
   const { resData } = props ?? {};
   const { name, cloudinaryImageId, cuisines, avgRating, sla } = resData?.info;
 
   return (
-    <div className="w-60 bg-gray-100 rounded-lg hover:bg-gray-400">
+    <div
+      data-testid="resCard"
+      className="w-60 bg-gray-100 rounded-lg hover:bg-gray-400"
+    >
       <img
         alt="res logo"
         className="rounded-md h-60 w-60"

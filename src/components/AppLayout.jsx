@@ -9,7 +9,6 @@ import { Provider } from "react-redux";
 const AppLayout = () => {
   const [userName, setUserName] = useState("");
   const onlineStatus = useOnlineStatus();
-  console.log(onlineStatus);
 
   useEffect(() => {
     setUserName("Gaurav");

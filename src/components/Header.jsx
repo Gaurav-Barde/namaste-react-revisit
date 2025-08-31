@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <div className="flex justify-between items-center px-2 py-4 bg-white shadow-sm">
       <div className="logo-container">
-        <Link path="/">
+        <Link to="/">
           <img alt="Logo" className="w-20" src={APP_LOGO_URL} />
         </Link>
       </div>
